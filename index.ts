@@ -1,5 +1,4 @@
-//main file where everything is imported
-import {NewEventBlock} from "./blocks/event"
-export {
-    NewEventBlock
-}
+import {EventBlock} from "./blocks/event"
+let bl = new EventBlock("efewfewfwefwe")
+bl.print()
+
