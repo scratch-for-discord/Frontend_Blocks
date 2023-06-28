@@ -24,5 +24,8 @@
     "tsc": "^2.0.4",
     "tsconfig": "^7.0.0",
     "typescript": "^5.1.3"
+  },
+  "dependencies": {
+    "blockly": "^9.3.3"
   }
 }
