@@ -1,8 +1,6 @@
-import { Block } from "../classes/block";
 export { EventBlock };
-class EventBlock extends Block {
+class EventBlock {
     constructor(data) {
-        super();
         this.dataBlock = {
             "colour": "#F5AB1A",
             message0: "",

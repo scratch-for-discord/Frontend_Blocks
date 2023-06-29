@@ -12,7 +12,7 @@ interface EventBl {
     messageEventNameBlock: string,
     type?: string, //this is auto generated from eventName s4d_event_{eventName}
 }
-class EventBlock extends Block {
+class EventBlock {
     data: EventBl
     dataBlock = {
         "colour": "#F5AB1A",
@@ -37,7 +37,6 @@ class EventBlock extends Block {
     }
     EventNameBlockType= ""
     constructor(data: EventBl) {
-        super()
         this.data = data;
         this.EventNameBlock.message0 = data.messageEventNameBlock
         this.EventNameBlock.output = data.eventName
