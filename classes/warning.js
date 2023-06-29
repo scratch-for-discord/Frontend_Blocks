@@ -14,8 +14,12 @@ export class Warning {
     constructor(blockName) {
         this.block = blockName;
     }
-    addWarning(warning) {
-        registerRestrictions(this.block, warning.data);
+    addWarnings(...warning) {
+        let msgs = [];
+        for (let i = 0; i < warning.length; i++) {
+            msgs.push(warning[i].data);
+        }
+        registerRestrictions(this.block, msgs);
         return this;
     }
 }

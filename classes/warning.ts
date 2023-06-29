@@ -1,4 +1,4 @@
-import {registerRestrictions} from "../warning/warning"
+import { registerRestrictions, restrictions } from "../warning/warning";
 export enum WarningType {
     Null = "",
     HasParent = "hasparent",
@@ -10,7 +10,7 @@ export enum WarningType {
     DropdownOfParent = "dropdownofparent"
 }
 
-interface WarningMessage {
+export interface WarningMessage {
     type: WarningType;
     message: string;
     types: string[];
@@ -21,8 +21,13 @@ export class Warning {
     constructor(blockName: string) {
         this.block = blockName
     }
-    addWarning(warning: WarningBuilder): Warning {
-        registerRestrictions(this.block, warning.data)
+    addWarnings(...warning: WarningBuilder[]): Warning {
+        let msgs = []
+        for(let i =0; i < warning.length; i++) {
+            msgs.push(warning[i].data)
+        }
+
+        registerRestrictions(this.block, msgs)
         return this
     }
 }
