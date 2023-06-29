@@ -26,6 +26,6 @@
     "typescript": "^5.1.3"
   },
   "dependencies": {
-    "blockly": "^8.0.2"
+    "blockly": "^10.0.0"
   }
 }
