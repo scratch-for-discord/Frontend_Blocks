@@ -1,4 +1,4 @@
-import { registerRestrictions } from "../warning/warning";
+import { data } from "../config";
 export var WarningType;
 (function (WarningType) {
     WarningType["Null"] = "";
@@ -12,14 +12,15 @@ export var WarningType;
 })(WarningType || (WarningType = {}));
 export class Warning {
     constructor(blockName) {
+        this.restrictionFunc = data.registerRestrictionsFunc;
         this.block = blockName;
     }
-    addWarnings(...warning) {
+    setWarnings(...warning) {
         let msgs = [];
         for (let i = 0; i < warning.length; i++) {
             msgs.push(warning[i].data);
         }
-        registerRestrictions(this.block, msgs);
+        this.restrictionFunc(this.block, msgs);
         return this;
     }
 }

@@ -2,7 +2,7 @@ import Blockly from "blockly";
 import { XmlJSON } from "./xmlJSON";
 import {Warning} from "./warning";
 
-interface BlockData {
+export interface BlockData {
     name: string,
     json: any,
 }
@@ -15,6 +15,7 @@ export class Block {
         this.blockData = {name: blockName, json: {}}
         this.warning = new Warning(blockName)
         this.xmlJson = new XmlJSON(blockName)
+
     }
 
     setName(name: string): Block {
@@ -25,12 +26,16 @@ export class Block {
         this.blockData.json = data
         return this
     }
+    Block() {
+        return Blockly.Blocks[this.blockData.name]
+    }
     Register() {
         let d = this.blockData.json
         Blockly.Blocks[this.blockData.name] = {
             init: function() {
                 this.jsonInit(d);
-            }
+            },
+
         };
     }
 

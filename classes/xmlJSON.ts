@@ -1,12 +1,12 @@
 
-enum FieldType {
+export enum FieldType {
     Num,
     Str,
     Bool
 }
 
 
-interface xmlJsonData {
+export interface xmlJsonData {
     type: string,
     value: any,
     fieldType?: FieldType, //auto generated

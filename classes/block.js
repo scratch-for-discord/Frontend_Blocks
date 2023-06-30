@@ -15,12 +15,15 @@ export class Block {
         this.blockData.json = data;
         return this;
     }
+    Block() {
+        return Blockly.Blocks[this.blockData.name];
+    }
     Register() {
         let d = this.blockData.json;
         Blockly.Blocks[this.blockData.name] = {
             init: function () {
                 this.jsonInit(d);
-            }
+            },
         };
     }
 }

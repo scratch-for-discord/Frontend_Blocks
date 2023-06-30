@@ -1,6 +1,5 @@
 import Blockly from "blockly";
-import {restrictions} from "../../src/restrictions";
-
+export const restrictions = {};
 const restrictionMessages = {
     RES_MISSING_AHQ_CONTENT: "All the blocks should be filled!",
     RES_MISSING_AHQ_SUPER_CONTENT: "You should place it in the block \"Make a convert task\"",

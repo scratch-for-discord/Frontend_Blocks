@@ -1,4 +1,4 @@
-import { registerRestrictions, restrictions } from "../warning/warning";
+import { data  } from "../config"
 export enum WarningType {
     Null = "",
     HasParent = "hasparent",
@@ -17,17 +17,19 @@ export interface WarningMessage {
 }
 
 export class Warning {
+    restrictionFunc: (...args: any) => any
     block: string
     constructor(blockName: string) {
+        this.restrictionFunc = data.registerRestrictionsFunc
         this.block = blockName
     }
-    addWarnings(...warning: WarningBuilder[]): Warning {
+    setWarnings(...warning: WarningBuilder[]): Warning {
         let msgs = []
         for(let i =0; i < warning.length; i++) {
             msgs.push(warning[i].data)
         }
 
-        registerRestrictions(this.block, msgs)
+        this.restrictionFunc(this.block, msgs)
         return this
     }
 }

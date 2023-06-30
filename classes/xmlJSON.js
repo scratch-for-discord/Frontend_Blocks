@@ -1,4 +1,4 @@
-var FieldType;
+export var FieldType;
 (function (FieldType) {
     FieldType[FieldType["Num"] = 0] = "Num";
     FieldType[FieldType["Str"] = 1] = "Str";
