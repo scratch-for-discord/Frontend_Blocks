@@ -1,14 +1,14 @@
 {
   "name": "frontend_blocks",
-  "version": "1.0.0",
+  "version": "1.2.0",
   "description": "",
-  "main": "../index.js",
+  "main": "index.js",
   "directories": {
-    "doc": "../docs"
+    "doc": "docs"
   },
   "scripts": {
     "test": "",
-    "build": "../node_modules/.bin/tsc --init"
+    "build": "tsc"
   },
   "repository": {
     "type": "git",

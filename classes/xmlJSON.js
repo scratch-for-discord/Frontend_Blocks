@@ -36,6 +36,19 @@ export class XmlJSON {
         });
         return this;
     }
+    JSON() {
+        let baseJson = {
+            kind: "block",
+            type: this.blockName,
+            fields: {}
+        };
+        for (let i = 0; i < this.data.length; i++) {
+            let field = this.data[i];
+            // @ts-ignore
+            baseJson.fields[field.type] = field.value;
+        }
+        return baseJson;
+    }
     XML() {
         let baseString1 = `<block type="${this.blockName}">`;
         let secondString1 = "</block>";
