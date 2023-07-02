@@ -20,4 +20,6 @@ block1.Register()
 //toolbox.js
 
 block1.xmlJson.XML()
+//for json toolbox use
+block1.xmlJson.JSON()
 ```
